@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { addCity, getCities } from './services/CityService';
+import CityInterface from './interfaces/CityInterface';
 
 function App() {
+  const [cities, setCities] = useState([] as CityInterface[]);
+  useEffect(() => {
+    (async() => {
+			// Récupération des posts
+			const fetched_cities = await getCities();
+			console.log('fetched_posts', fetched_cities);
+			setCities(fetched_cities);
+		})();
+  }, []);
+
+  const handleClickAddPost = async () => {
+		await addCity("Nantes");
+		const fetched_posts = await getCities();
+		setCities(fetched_posts);
+	}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {cities.map(city => <p key={city.id}>{city.nom}</p>)}
+      <button onClick={handleClickAddPost}>Ajouter</button>
     </div>
   );
 }
