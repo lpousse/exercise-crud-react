@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { addCity, getCities } from './services/CityService';
 import CityInterface from './interfaces/CityInterface';
+import Cities from './components/Cities';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [cities, setCities] = useState([] as CityInterface[]);
@@ -23,8 +24,10 @@ function App() {
 
   return (
     <div className="App">
-      {cities.map(city => <p key={city.id}>{city.nom}</p>)}
-      <button onClick={handleClickAddPost}>Ajouter</button>
+      <main className='App-header'>
+        <h1 className='text-info mb-5'>Liste des villes</h1>
+        <Cities cities={cities} setCities={setCities}/>
+      </main>      
     </div>
   );
 }
