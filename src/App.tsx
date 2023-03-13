@@ -33,8 +33,8 @@ function App() {
         <h1 className='text-info mb-5'>Liste des villes</h1>
         <FormCity handleClickAddCity={handleClickAddCity}/>
         <Cities cities={cities} setCities={setCities}/>
-      </main>      
-     </div>
+      </main>   
+    </div>
   );
 }
 

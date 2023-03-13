@@ -42,50 +42,26 @@
       "id": 2
     },
     {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "nom": "Parisot",
+      "nom": "Nice",
       "centre": {
         "type": "Point",
         "coordinates": [
-          1.8296,
-          43.7968
+          7.2528,
+          43.7032
         ]
       },
-      "codeDepartement": "81",
-      "code": "81202",
-      "_score": 0.5093469199093728,
+      "codeDepartement": "06",
+      "code": "06088",
+      "_score": 0.7599811865079426,
       "departement": {
-        "code": "81",
-        "nom": "Tarn"
+        "code": "06",
+        "nom": "Alpes-Maritimes"
       },
       "region": {
-        "code": "76",
-        "nom": "Occitanie"
+        "code": "93",
+        "nom": "Provence-Alpes-Côte d'Azur"
       },
-      "id": 11
+      "id": 3
     }
   ]
 }
