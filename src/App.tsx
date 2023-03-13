@@ -31,8 +31,12 @@ function App() {
 
       <main className='App-header'>
         <h1 className='text-info mb-5'>Liste des villes</h1>
-        <FormCity handleClickAddCity={handleClickAddCity}/>
-        <Cities cities={cities} setCities={setCities}/>
+        <div className='w-50 ms-auto me-auto'>
+          <FormCity handleClickAddCity={handleClickAddCity} label="Ajouter une Ville"/>
+        </div>
+        <ul className="list-group w-50">
+          {cities.map(city => <Cities key={city.id} city={city} setCities={setCities}/>)}
+        </ul>
       </main>   
     </div>
   );
