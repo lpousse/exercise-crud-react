@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import { addCity, getCities } from './services/CityService';
 import CityInterface from './interfaces/CityInterface';
-import Cities from './components/Cities';
+import City from './components/City';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FormCity from './components/FormCity';
 
@@ -35,7 +35,7 @@ function App() {
           <FormCity handleClickAddCity={handleClickAddCity} label="Ajouter une Ville"/>
         </div>
         <ul className="list-group w-50">
-          {cities.map(city => <Cities key={city.id} city={city} setCities={setCities}/>)}
+          {cities.map(city => <City key={city.id} city={city} setCities={setCities}/>)}
         </ul>
       </main>   
     </div>

@@ -1,18 +1,20 @@
 import e from "express";
 import { useState } from "react";
-import CitiesPropsInterface from "../interfaces/CitiesPropsInterface";
+import CityPropsInterface from "../interfaces/CityPropsInterface";
 import { deleteCity, getCities, updateCity } from "../services/CityService";
 import FormCity from "./FormCity";
 
-const Cities = (props: CitiesPropsInterface) =>{
+const City = (props: CityPropsInterface) =>{
 
     const[updateVisible, setUpdateVisible] = useState(false);
 
 
     const handleClickDelete = async (cityId: number) => {
-		await deleteCity(cityId);
-		const fetched_posts = await getCities();
-		props.setCities(fetched_posts);
+        if(window.confirm("Êtes-vous sûr de vouloir supprimer " + props.city.nom + " ?")) {
+            await deleteCity(cityId);
+            const fetched_posts = await getCities();
+            props.setCities(fetched_posts);
+        }
 	}
 
     const handleClickUpdate = async (e: any) => {
@@ -22,6 +24,7 @@ const Cities = (props: CitiesPropsInterface) =>{
 		const fetched_posts = await getCities();
 		props.setCities(fetched_posts);
         setUpdateVisible(false);
+        e.target.reset();
 	}
 
     return(
@@ -39,4 +42,4 @@ const Cities = (props: CitiesPropsInterface) =>{
     )
 }
 
-export default Cities;
+export default City;

@@ -1,9 +1,9 @@
 import React from "react";
 import CityInterface from "./CityInterface";
 
-interface CitiesPropsInterface{
+interface CityPropsInterface{
     city: CityInterface,
     setCities: React.Dispatch<React.SetStateAction<CityInterface[]>>
 }
 
-export default CitiesPropsInterface;
+export default CityPropsInterface;

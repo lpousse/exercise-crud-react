@@ -1,67 +1,26 @@
 {
   "cities": [
     {
-      "id": 1,
-      "nom": "Poitiers",
+      "nom": "Nice",
       "centre": {
         "type": "Point",
         "coordinates": [
-          0.3715,
-          46.5846
+          7.2528,
+          43.7032
         ]
       },
+      "codeDepartement": "06",
+      "code": "06088",
+      "_score": 0.7599811865079426,
       "departement": {
-        "code": "86",
-        "nom": "Vienne"
+        "code": "06",
+        "nom": "Alpes-Maritimes"
       },
       "region": {
-        "code": "75",
-        "nom": "Nouvelle-Aquitaine"
-      }
-    },
-    {
-      "nom": "Marseillette",
-      "centre": {
-        "type": "Point",
-        "coordinates": [
-          2.5438,
-          43.2119
-        ]
-      },
-      "codeDepartement": "11",
-      "code": "11220",
-      "_score": 0.6114022669516821,
-      "departement": {
-        "code": "11",
-        "nom": "Aude"
-      },
-      "region": {
-        "code": "76",
-        "nom": "Occitanie"
+        "code": "93",
+        "nom": "Provence-Alpes-Côte d'Azur"
       },
       "id": 3
-    },
-    {
-      "nom": "Parisot",
-      "centre": {
-        "type": "Point",
-        "coordinates": [
-          1.8296,
-          43.7968
-        ]
-      },
-      "codeDepartement": "81",
-      "code": "81202",
-      "_score": 0.5093469199093728,
-      "departement": {
-        "code": "81",
-        "nom": "Tarn"
-      },
-      "region": {
-        "code": "76",
-        "nom": "Occitanie"
-      },
-      "id": 4
     },
     {
       "nom": "Strasbourg",
@@ -84,6 +43,28 @@
         "nom": "Grand Est"
       },
       "id": 5
+    },
+    {
+      "nom": "Poitiers",
+      "centre": {
+        "type": "Point",
+        "coordinates": [
+          0.3715,
+          46.5846
+        ]
+      },
+      "codeDepartement": "86",
+      "code": "86194",
+      "_score": 1,
+      "departement": {
+        "code": "86",
+        "nom": "Vienne"
+      },
+      "region": {
+        "code": "75",
+        "nom": "Nouvelle-Aquitaine"
+      },
+      "id": 7
     }
   ]
 }
