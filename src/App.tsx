@@ -4,9 +4,11 @@ import { addCity, getCities } from './services/CityService';
 import CityInterface from './interfaces/CityInterface';
 import Cities from './components/Cities';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import FormCity from './components/FormCity';
 
 function App() {
   const [cities, setCities] = useState([] as CityInterface[]);
+
   useEffect(() => {
     (async() => {
 			// Récupération des posts
@@ -16,19 +18,23 @@ function App() {
 		})();
   }, []);
 
-  const handleClickAddPost = async () => {
-		await addCity("Nantes");
+  const handleClickAddCity = async (e: any) => {
+    e.preventDefault()
+		await addCity(e.target.city.value);
 		const fetched_posts = await getCities();
 		setCities(fetched_posts);
 	}
+  
 
   return (
     <div className="App">
+
       <main className='App-header'>
         <h1 className='text-info mb-5'>Liste des villes</h1>
+        <FormCity handleClickAddCity={handleClickAddCity}/>
         <Cities cities={cities} setCities={setCities}/>
       </main>      
-    </div>
+     </div>
   );
 }
 
